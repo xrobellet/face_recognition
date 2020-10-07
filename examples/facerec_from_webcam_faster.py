@@ -12,7 +12,8 @@ import numpy as np
 # specific demo. If you have trouble installing it, try any of the other demos that don't require it instead.
 
 # Get a reference to webcam #0 (the default one)
-video_capture = cv2.VideoCapture(0)
+#video_capture = cv2.VideoCapture(0)
+video_capture = cv2.VideoCapture("rtsp://admin:123456@192.168.1.159:554/live/ch0")
 
 # Load a sample picture and learn how to recognize it.
 xavier_image = face_recognition.load_image_file("./test_images/xavier.jpg")
@@ -24,7 +25,7 @@ biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 
 # Create arrays of known face encodings and their names
 known_face_encodings = [
-    obama_face_encoding,
+    xavier_face_encoding,
     biden_face_encoding
 ]
 known_face_names = [
